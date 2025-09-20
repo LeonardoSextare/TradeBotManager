@@ -8,10 +8,5 @@ app = FastAPI(
 
 @app.head("/health")
 async def obter_status():
+    """Endpoint HEAD para verificar status da API - compatível com UptimeRobot free"""
     return {"status": "ativo", "versao": "0.1.0"}
-
-
-if __name__ == "__main__":
-    import uvicorn
-    # Simples e direto
-    uvicorn.run(app, host="0.0.0.0", port=8001)
