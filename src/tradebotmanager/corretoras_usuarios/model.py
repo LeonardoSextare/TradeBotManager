@@ -14,6 +14,6 @@ class CorretoraUsuario(ModelBase):
     api_token = Column(String(255), nullable=True) # Uso futuro
     ativo = Column(Boolean, default=True, nullable=False)
     
-    # Relacionamento com usuário
-    usuario = relationship("Usuario", back_populates="corretoras")
-    corretora = relationship("Corretora", back_populates="usuarios")
+    # Relacionamentos
+    dono_conta = relationship("Usuario", back_populates="contas_corretoras")
+    corretora = relationship("Corretora", back_populates="contas_usuarios")

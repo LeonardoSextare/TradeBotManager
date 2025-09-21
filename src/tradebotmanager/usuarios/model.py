@@ -14,9 +14,9 @@ class Usuario(ModelBase):
     ativo = Column(Boolean, default=True, nullable=False)
 
     # Relacionamentos
-    corretoras = relationship(
-        "CorretoraUsuario", back_populates="usuario", cascade="all, delete-orphan"
+    contas_corretoras = relationship(
+        "CorretoraUsuario", back_populates="dono_conta", cascade="all, delete-orphan"
     )
-    bots_op_mkt = relationship(
+    bots_option_market = relationship(
         "BotUsuarioOpMkt", back_populates="usuario", cascade="all, delete-orphan"
     )

@@ -13,5 +13,5 @@ class BotUsuarioOpMkt(ModelBase):
     ativo = Column(Boolean, default=True, nullable=False)
     
     # Relacionamentos
-    usuario = relationship("Usuario", back_populates="bots_usuarios_op_mkt")
+    usuario = relationship("Usuario", back_populates="bots_option_market")
     bot_option_market = relationship("BotOptionMarket", back_populates="usuarios")
