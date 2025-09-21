@@ -17,6 +17,6 @@ class Usuario(ModelBase):
     corretoras = relationship(
         "CorretoraUsuario", back_populates="usuario", cascade="all, delete-orphan"
     )
-    bots = relationship(
+    bots_op_mkt = relationship(
         "BotUsuarioOpMkt", back_populates="usuario", cascade="all, delete-orphan"
     )

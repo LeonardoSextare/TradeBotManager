@@ -12,6 +12,9 @@ class BotOptionMarket(ModelBase):
     descricao = Column(String(500), nullable=True)
     ativo = Column(Boolean, default=True, nullable=False)
     
+    # Relacionamentos faltando
+    usuarios = relationship("BotUsuarioOpMkt", back_populates="bot_option_market")
+    
     # Relacionamento com corretora - um bot pertence a uma corretora
     corretora_id = Column(Integer, ForeignKey("corretoras.id"), nullable=False)
     corretora = relationship("Corretora", back_populates="bots")
