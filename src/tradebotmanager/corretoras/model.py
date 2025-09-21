@@ -7,4 +7,4 @@ class Corretora(ModelBase):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(100), nullable=False)
-    ativa = Column(Boolean, default=True, nullable=False)
+    ativo = Column(Boolean, default=True, nullable=False)

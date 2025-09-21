@@ -17,6 +17,10 @@ Sistema de gerenciamento de copy trading para corretoras, inicialmente OptionMar
 - **Deploy**: Render
 - **Gerenciador de Pacotes**: UV
 
+## Decisões de Projeto
+- **Soft delete**: Usar campo booleano `ativo` para marcar registros como inativos
+
+
 ## Filosofia do Código
 - **Idioma**: Código em português (variáveis, funções, comentários)
 - **Legibilidade**: Sempre priorizar leitura do codigo.

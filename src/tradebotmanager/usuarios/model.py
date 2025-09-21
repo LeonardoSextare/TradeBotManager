@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
-from tradebotmanager.database import ModelBase
+from database import ModelBase
 
 
 class Usuario(ModelBase):
@@ -8,11 +8,15 @@ class Usuario(ModelBase):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(100), nullable=False)
-    email = Column(String(255), unique=True, nullable=False)
+    email = Column(String(255), unique=True, nullable=False, index=True)
     senha = Column(String(255), nullable=False)
     tipo = Column(String(50), nullable=False)
-    ativo = Column(Integer, default=True)
+    ativo = Column(Boolean, default=True, nullable=False)
 
-    # RELATIONSHIP: Um usuário pode ter várias corretoras
-    # back_populates conecta com Corretora.usuario
-    corretoras = relationship("Corretora", back_populates="usuario")
+    # Relacionamentos
+    corretoras = relationship(
+        "CorretoraUsuario", back_populates="usuario", cascade="all, delete-orphan"
+    )
+    bots = relationship(
+        "BotUsuarioOpMkt", back_populates="usuario", cascade="all, delete-orphan"
+    )
