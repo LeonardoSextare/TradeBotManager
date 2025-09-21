@@ -8,6 +8,5 @@
   "code-runner.executorMapByGlob": {
     "**/main.py": "powershell -Command \"& { clear; uv run uvicorn src.tradebotmanager.main:app --reload --host 0.0.0.0 --port 8000 --log-level debug }\""
   },
-  // Executar da pasta raiz do projeto
-  "code-runner.fileDirectoryAsCwd": true
+  "code-runner.cwd": "${workspaceFolder}\\src\\tradebotmanager",
 }

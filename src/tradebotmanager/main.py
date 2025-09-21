@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 
 app = FastAPI(
-    title="TradeBotManager", 
+    title="TradeBotManager",
     description="Sistema de Gerenciamento de Bots de Trading",
-    version="0.1.0"
+    version="0.1.0",
 )
+
 
 @app.head("/health")
 async def obter_status():
