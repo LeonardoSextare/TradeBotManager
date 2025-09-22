@@ -11,6 +11,7 @@ class CorretoraUsuario(ModelBase):
     corretora_id = Column(Integer, ForeignKey("corretoras.id"), nullable=False)
     login = Column(String(100), nullable=False)
     senha = Column(String(255), nullable=False)
+    token_jwt = Column(String(500), nullable=True)
     api_token = Column(String(255), nullable=True) # Uso futuro
     ativo = Column(Boolean, default=True, nullable=False)
     
