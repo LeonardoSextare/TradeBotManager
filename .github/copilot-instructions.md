@@ -14,7 +14,7 @@ Sistema de gerenciamento de copy trading para corretoras, inicialmente OptionMar
 - **Backend**: FastAPI
 - **Banco**: Supabase (PostgreSQL)
 - **ORM**: SQLAlchemy + Pydantic
-- **Deploy**: Render
+- **Deploy**: Render (0.1 CPU / 512MB RAM free tier)
 - **Gerenciador de Pacotes**: UV
 
 ## Decisões de Projeto
@@ -22,6 +22,11 @@ Sistema de gerenciamento de copy trading para corretoras, inicialmente OptionMar
 - **Simplicidade**: Evitar complexidade desnecessária
 - **Somente o necessário**: Implementar apenas o que é essencial para a funcionalidade atual
 - **Documentação**: Código autoexplicativo + docstrings claras e simples.
+
+# Integrações Externas
+- **OptionMarket**: Foco inicial, integração via cloudscraper
+- **Evitar requisições desnecessárias**: Realizar requisições apenas quando necessário
+- **Fingir ser navegador real**: Usar cloudscraper, headers apropriados para evitar bloqueios
 
 ## Filosofia do Código
 - **Idioma**: Código em português (variáveis, funções, comentários)
