@@ -1,6 +1,13 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, Enum
 from sqlalchemy.orm import relationship
 from database import ModelBase
+import enum
+
+
+class TipoUsuario(enum.Enum):
+    """Tipos de usuário disponíveis no sistema"""
+    ADMIN = "ADMIN"
+    USUARIO = "USUARIO"
 
 
 class Usuario(ModelBase):
@@ -10,7 +17,7 @@ class Usuario(ModelBase):
     nome = Column(String(100), nullable=False)
     email = Column(String(255), unique=True, nullable=False, index=True)
     senha = Column(String(255), nullable=False)
-    tipo = Column(String(50), nullable=False)
+    tipo = Column(Enum(TipoUsuario), nullable=False, default=TipoUsuario.USUARIO)
     ativo = Column(Boolean, default=True, nullable=False)
 
     # Relacionamentos

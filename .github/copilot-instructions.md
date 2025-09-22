@@ -21,6 +21,7 @@ Sistema de gerenciamento de copy trading para corretoras, inicialmente OptionMar
 - **Soft delete**: Usar campo booleano `ativo` para marcar registros como inativos
 - **Simplicidade**: Evitar complexidade desnecessária
 - **Somente o necessário**: Implementar apenas o que é essencial para a funcionalidade atual
+- **Documentação**: Código autoexplicativo + docstrings claras e simples.
 
 ## Filosofia do Código
 - **Idioma**: Código em português (variáveis, funções, comentários)
